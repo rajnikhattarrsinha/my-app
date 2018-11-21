@@ -24,7 +24,7 @@ node{
       def dockerRun= 'docker run -p 8080:8080 -d --name my-app rajnikhattarrsinha/my-app:2.0.0'
       sshagent(['deployserver']) {
     // some block
-         sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.94.244 ${dockerRun}'
+         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.94.244 ${dockerRun}"
       }
    }
    
