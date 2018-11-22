@@ -21,10 +21,10 @@ node{
    }
    
    stage('Run Container on Deployment-server'){
-      def dockerRun= 'docker run -p 80:80 -d --name my-app rajnikhattarrsinha/my-app:2.0.0'
+      def dockerRun= 'docker run -p 8080:8080 -d --name my-app rajnikhattarrsinha/my-app:2.0.0'
       sshagent(['deployserver']) {
     // some block
-         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.94.244 ${dockerRun}"
+         sh "ssh -o StrictHostKeyChecking=no ubuntu@54.144.60.78 ${dockerRun}"
       }
    }
    
